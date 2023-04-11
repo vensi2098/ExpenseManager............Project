@@ -4,11 +4,11 @@ data class CategoryModel(val name:String)
 
 data class  IncomeExpenceModel(
     val id :Int,
-    val type: String,
+    val date:String,
     val amount: String,
     val category:String,
-    val date:String,
     val mode:String,
+    val type: String,
     val note:String)
 
 

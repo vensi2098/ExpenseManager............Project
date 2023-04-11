@@ -1,5 +1,7 @@
 package com.example.expensemanager.allactivity.adapter
 
+import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +15,7 @@ class TransactionAdapter( var incomeExpenselist: ArrayList<IncomeExpenceModel>,v
 
 
     class MyViewholder (v:View):RecyclerView.ViewHolder(v){
-        var type:TextView=v.findViewById(R.id.txtType)
+        var type:TextView=v.findViewById(R.id.txtIncomeExp)
         var amount:TextView=v.findViewById(R.id.txtAmount)
         var category:TextView=v.findViewById(R.id.txtCatergory)
         var date:TextView=v.findViewById(R.id.txtDate)
@@ -37,6 +39,24 @@ class TransactionAdapter( var incomeExpenselist: ArrayList<IncomeExpenceModel>,v
         holder.date.setText(incomeExpenselist[position].date)
         holder.mode.setText(incomeExpenselist[position].mode)
         holder.note.setText(incomeExpenselist[position].note)
+
+        if(holder.type.text.toString()=="1")
+        {
+            holder.type.setBackgroundColor(Color.GREEN)
+            Log.e("TAG", "green: "+holder.type.text.toString() )
+            var incomeAmt1=holder.amount.text.toString()
+            var incomeAmt=incomeAmt1.toInt()
+            Log.e("TAG", "income: "+incomeAmt)
+        }
+        else
+        {
+            holder.type.setBackgroundColor(Color.RED)
+            Log.e("TAG", "red: "+holder.type.text.toString() )
+            var incomeAmt1=holder.amount.text.toString()
+            var expenseAmt=incomeAmt1.toInt()
+            Log.e("TAG", "income: "+expenseAmt)
+
+        }
         holder.editImg.setOnClickListener {
             xyz.invoke(incomeExpenselist[position])
         }

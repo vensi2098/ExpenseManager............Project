@@ -7,12 +7,14 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.expensemanager.allactivity.adapter.TransactionAdapter
 import com.example.expensemanager.allactivity.helper.MyDataHelper
 import com.example.expensemanager.allactivity.model.IncomeExpenceModel
 import com.example.expensemanager.databinding.ActivityTransactionBinding
+import com.example.expensemanager.databinding.DilogDeleteBinding
 import com.example.expensemanager.databinding.DilogModeBinding
 
 class TransactionActivity : AppCompatActivity() {
@@ -40,7 +42,7 @@ class TransactionActivity : AppCompatActivity() {
 
         adapter = TransactionAdapter(incomeExpenselist, {
             var titale = "Update Details"
-            var icon = "updateButton"
+            var icon = "Update"
             val trans = Intent(this, AddIncomeActivity::class.java)
             Log.e("TAG", "intView: " + it.id)
             trans.putExtra("amount", it.amount)
@@ -56,21 +58,23 @@ class TransactionActivity : AppCompatActivity() {
 
 
                 val d = Dialog(this)
-                val ddMode: DilogModeBinding = DilogModeBinding.inflate(layoutInflater)
+                val ddMode: DilogDeleteBinding = DilogDeleteBinding.inflate(layoutInflater)
                 d.setContentView(ddMode.root)
                 d.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 d.window?.setLayout(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
-                ddMode.btnSetMode.setOnClickListener {
+                ddMode.btnDelete.setOnClickListener {
 
                     dh.deleteRecord(dId)
                     incomeExpenselist = dh.displayIncomeExp()
                     adapter.uapdateData(incomeExpenselist)
+                    Toast.makeText(this, "Data Delete", Toast.LENGTH_SHORT).show()
                     d.dismiss()
                 }
-                ddMode.btnCancelMode.setOnClickListener {
+                ddMode.btnCancel.setOnClickListener {
+                    Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show()
                     d.dismiss()
                 }
                 d.show()

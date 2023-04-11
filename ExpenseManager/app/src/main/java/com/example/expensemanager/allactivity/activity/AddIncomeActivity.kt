@@ -87,13 +87,13 @@ class AddIncomeActivity : AppCompatActivity() {
                     val selectId: Int = binding.rdgType.checkedRadioButtonId
                     var selectedRadioButton: RadioButton = findViewById(selectId)
                     var text = selectedRadioButton.text.toString()
-                    if (text.equals("Income")) {
-                        type = 1
+
+                    type = if (text == "income") {
+                        1
                     } else {
-                        type = 2
+                        2
                     }
                 }
-
                 if (binding.btnDone.text.toString().equals("updateButton")) {
                     dbhelper.UpdateRecord(amount, note,idNnumber)
                 } else {

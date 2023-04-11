@@ -43,7 +43,10 @@
 <!--                android:src="@drawable/right_img" />-->
             <TextView
                 android:text="done"
+                android:textSize="@dimen/_15ssp"
                 android:id="@+id/btnDone"
+                android:textColor="@color/white"
+                android:layout_marginStart="@dimen/_30sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

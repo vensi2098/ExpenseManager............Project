@@ -20,14 +20,14 @@ class ExpenseMANAgerActivity1 : AppCompatActivity() {
         val title_income="Add Income"
         binding.cdIncome.setOnClickListener {
             val i=Intent(this@ExpenseMANAgerActivity1, AddIncomeActivity::class.java)
-            i.putExtra("page","i")
+            i.putExtra("page","income")
             i.putExtra("title",title_income)
             startActivity(i)
         }
         val title_expense="Add Expense"
         binding.cdExpenses.setOnClickListener {
             val i=Intent(this@ExpenseMANAgerActivity1, AddIncomeActivity::class.java)
-            i.putExtra("page","i")
+            i.putExtra("page","expense")
             i.putExtra("title",title_expense)
             startActivity(i)
         }

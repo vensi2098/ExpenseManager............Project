@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ExpenseManager</string>
+    <string name="are_you_sure_want_to_delete">Are you sure want to delete</string>
+    <string name="this_transaction">This Transaction</string>
 </resources>
