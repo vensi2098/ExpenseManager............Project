@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:context=".allactivity.activity.TransactionActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="#19688B">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgBackTransaction"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/leftarrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:text="Transaction"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgDonetransaction"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_120sdp"
+                android:src="@drawable/right_img" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:weightSum="7"
+        android:padding="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="DATE"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:text="AMOUNT"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="CATEGORY"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="MODE"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="TYPE"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="NOTE"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rcvTransaction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+</LinearLayout>
